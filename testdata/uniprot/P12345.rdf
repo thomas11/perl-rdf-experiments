@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns="http://purl.uniprot.org/core/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+<rdf:Description rdf:about="http://purl.uniprot.org/uniprot/P12345">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Protein" />
+<reviewed>true</reviewed>
+<created>1989-10-01</created>
+<modified>2010-01-19</modified>
+<version>64</version>
+<mnemonic>AATM_RABIT</mnemonic>
+<citation rdf:resource="http://purl.uniprot.org/citations/4030726" rdf:ID="_1" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/pir/B27103" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/smr/P12345" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/string/P12345" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/ensembl/ENSOCUT00000003872" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/eggnog/maNOG12574" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/hovergen/P12345" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/brenda/2.6.1.1" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/interpro/IPR000796" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/panther/PTHR11879" rdf:ID="_3" />
+<rdfs:seeAlso rdf:resource="http://purl.uniprot.org/prosite/PS00105" rdf:ID="_4" />
+<recommendedName rdf:resource="#_5" />
+<enzyme rdf:resource="http://purl.uniprot.org/enzyme/2.6.1.1" />
+<alternativeName rdf:resource="#_6" />
+<alternativeName rdf:resource="#_7" />
+<alternativeName rdf:resource="#_8" />
+<alternativeName rdf:resource="#_9" />
+<organism rdf:resource="http://purl.uniprot.org/taxonomy/9986" />
+<isolatedFrom rdf:resource="http://purl.uniprot.org/tissues/564" rdf:ID="_A" />
+<encodedBy rdf:resource="#_B" />
+<annotation rdf:resource="#_C" />
+<annotation rdf:resource="#_D" />
+<annotation rdf:resource="#_E" />
+<annotation rdf:resource="#_F" />
+<annotation rdf:resource="#_10" />
+<annotation rdf:resource="#_14" />
+<annotation rdf:resource="#_15" />
+<annotation rdf:resource="http://purl.uniprot.org/annotation/PRO_0000123886" />
+<annotation rdf:resource="#_18" />
+<existence rdf:resource="http://purl.uniprot.org/core/Evidence_at_Protein_Level_Existence" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/32" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/1003" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/903" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/445" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/496" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/keywords/663" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/go/0005759" rdf:ID="_1A" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/go/0005886" rdf:ID="_1B" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/go/0004069" rdf:ID="_1C" />
+<classifiedWith rdf:resource="http://purl.uniprot.org/go/0006457" rdf:ID="_1D" />
+<sequence rdf:resource="http://purl.uniprot.org/isoforms/P12345-1" />
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/citations/4030726">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Journal_Citation" />
+<title>Aspartate aminotransferase isozymes from rabbit liver. Purification and properties.</title>
+<author>Kuramitsu S.</author>
+<author>Inoue K.</author>
+<author>Kondo K.</author>
+<author>Aki K.</author>
+<author>Kagamiyama H.</author>
+<skos:exactMatch rdf:resource="http://purl.uniprot.org/medline/85289123" />
+<skos:exactMatch rdf:resource="http://purl.uniprot.org/pubmed/4030726" />
+<date>1985</date>
+<name>J. Biochem.</name>
+<volume>97</volume>
+<pages>1337-1345</pages>
+</rdf:Description>
+<rdf:Description rdf:about="#_1">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Citation_Statement" />
+<scope>PROTEIN SEQUENCE</scope>
+<context rdf:resource="#_2" />
+</rdf:Description>
+<rdf:Description rdf:about="#_2">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Tissue" />
+<rdfs:label>Liver</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/pir/B27103">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>PIR</database>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/smr/P12345">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>SMR</database>
+<rdfs:comment>1-30</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/string/P12345">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>STRING</database>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/ensembl/ENSOCUT00000003872">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Transcript_Resource" />
+<database>Ensembl</database>
+<rdfs:comment>Oryctolagus cuniculus</rdfs:comment>
+<translatedTo rdf:resource="http://purl.uniprot.org/ensembl/ENSOCUP00000003357" />
+<transcribedFrom rdf:resource="http://purl.uniprot.org/ensembl/ENSOCUG00000003871" />
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/eggnog/maNOG12574">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>eggNOG</database>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/hovergen/P12345">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>HOVERGEN</database>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/brenda/2.6.1.1">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>BRENDA</database>
+<rdfs:comment>255</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/interpro/IPR000796">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>InterPro</database>
+<rdfs:comment>Asp_trans</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/panther/PTHR11879">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>PANTHER</database>
+<rdfs:comment>Asp_trans</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_3">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Domain_Assignment_Statement" />
+<hits>1</hits>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/prosite/PS00105">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Resource" />
+<database>PROSITE</database>
+<rdfs:comment>AA_TRANSFER_CLASS_1</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_4">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Domain_Assignment_Statement" />
+<partial>true</partial>
+</rdf:Description>
+<rdf:Description rdf:about="#_5">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Structured_Name" />
+<fullName>Aspartate aminotransferase, mitochondrial</fullName>
+<shortName>mAspAT</shortName>
+</rdf:Description>
+<rdf:Description rdf:about="#_6">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Structured_Name" />
+<fullName>Transaminase A</fullName>
+</rdf:Description>
+<rdf:Description rdf:about="#_7">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Structured_Name" />
+<fullName>Glutamate oxaloacetate transaminase 2</fullName>
+</rdf:Description>
+<rdf:Description rdf:about="#_8">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Structured_Name" />
+<fullName>Fatty acid-binding protein</fullName>
+<shortName>FABP-1</shortName>
+</rdf:Description>
+<rdf:Description rdf:about="#_9">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Structured_Name" />
+<fullName>Plasma membrane-associated fatty acid-binding protein</fullName>
+<shortName>FABPpm</shortName>
+</rdf:Description>
+<rdf:Description rdf:about="#_A">
+<citation rdf:resource="http://purl.uniprot.org/citations/4030726" />
+</rdf:Description>
+<rdf:Description rdf:about="#_B">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Gene" />
+<name>GOT2</name>
+</rdf:Description>
+<rdf:Description rdf:about="#_C">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Function_Annotation" />
+<rdfs:comment>Facilitates cellular uptake of long-chain free fatty acids (By similarity).</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_D">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Catalytic_Activity_Annotation" />
+<rdfs:comment>L-aspartate + 2-oxoglutarate = oxaloacetate + L-glutamate.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_E">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Cofactor_Annotation" />
+<rdfs:comment>Pyridoxal phosphate.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_F">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Subunit_Annotation" />
+<rdfs:comment>Homodimer.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_10">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Subcellular_Location_Annotation" />
+<locatedIn rdf:resource="#_11" />
+<locatedIn rdf:resource="#_12" />
+</rdf:Description>
+<rdf:Description rdf:about="#_11">
+<location rdf:resource="http://purl.uniprot.org/locations/170" />
+</rdf:Description>
+<rdf:Description rdf:about="#_12">
+<location rdf:resource="http://purl.uniprot.org/locations/39" rdf:ID="_13" />
+</rdf:Description>
+<rdf:Description rdf:about="#_13">
+<status rdf:resource="http://purl.uniprot.org/core/By_Similarity" />
+</rdf:Description>
+<rdf:Description rdf:about="#_14">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Annotation" />
+<rdfs:comment>In eukaryotes there are cytoplasmic, mitochondrial and chloroplastic isozymes.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="#_15">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Similarity_Annotation" />
+<rdfs:comment>Belongs to the class-I pyridoxal-phosphate-dependent aminotransferase family.</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/annotation/PRO_0000123886">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Chain_Annotation" />
+<rdfs:comment>Aspartate aminotransferase, mitochondrial</rdfs:comment>
+<range rdf:resource="#_16" />
+</rdf:Description>
+<rdf:Description rdf:about="#_16">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Range" />
+<begin>1</begin>
+<end rdf:ID="_17">30</end>
+</rdf:Description>
+<rdf:Description rdf:about="#_17">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Endpoint_Statement" />
+<limit>false</limit>
+</rdf:Description>
+<rdf:Description rdf:about="#_18">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Non-terminal_Residue_Annotation" />
+<range rdf:resource="#_19" />
+</rdf:Description>
+<rdf:Description rdf:about="#_19">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Range" />
+<begin>30</begin>
+<end>30</end>
+</rdf:Description>
+<rdf:Description rdf:about="#_1A">
+<status rdf:resource="http://purl.uniprot.org/core/IEA" />
+<database>UniProtKB-SubCell</database>
+</rdf:Description>
+<rdf:Description rdf:about="#_1B">
+<status rdf:resource="http://purl.uniprot.org/core/IEA" />
+<database>UniProtKB-SubCell</database>
+</rdf:Description>
+<rdf:Description rdf:about="#_1C">
+<status rdf:resource="http://purl.uniprot.org/core/IEA" />
+<database>EC</database>
+</rdf:Description>
+<rdf:Description rdf:about="#_1D">
+<status rdf:resource="http://purl.uniprot.org/core/TAS" />
+<database>HGNC</database>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.uniprot.org/isoforms/P12345-1">
+<rdf:type rdf:resource="http://purl.uniprot.org/core/Simple_Sequence" />
+<modified>1989-10-01</modified>
+<version>1</version>
+<fragment>single</fragment>
+<mass>3401</mass>
+<rdf:value>SSWWAHVEMG PPDPILGVTE AYKRDTNSKK</rdf:value>
+</rdf:Description>
+</rdf:RDF>
