@@ -18,6 +18,7 @@
 
 use RDF::Query;
 use RDF::Query::Algebra::BasicGraphPattern;
+use RDF::Query::Algebra::GroupGraphPattern;
 use RDF::Query::Algebra::Triple;
 use RDF::Query::Node::Literal;
 use RDF::Query::Node::Resource;
@@ -64,6 +65,8 @@ sub construct_query_bgp {
   my ($props_ref, $result_prop) = @_;
   my $prot_var = new_var('p');
 
+  my @patterns = ();
+
   # We're asking for a Protein. That's mostly unnecessary as it's
   # unlikely anything else would match a property chain matching a
   # UniProt protein, but why not.
@@ -71,7 +74,6 @@ sub construct_query_bgp {
                                   new_resource('Protein', 'UNIPROT'));
 
   # Construct query triple chain.
-  my @patterns = ();
   my $subject = $prot_var;
   foreach my $prop (@$props_ref) {
     # TODO namespaces other than uniprot
@@ -82,14 +84,14 @@ sub construct_query_bgp {
   }
 
   my $bgp = new RDF::Query::Algebra::BasicGraphPattern(@patterns);
+  my $ggp = new RDF::Query::Algebra::GroupGraphPattern($bgp);
 
-  my $result_prop = @$props_ref[-1];
+  my $project = RDF::Query::Algebra::Project->new($ggp,
+                                                  [new_var($result_prop)]);
 
-  # Wonder if we can't do this more programmatically and less
-  # error-prone, mailed Greg Williams about it.
-  my $sparql = "select ?$result_prop where {\n"
-    . $bgp->as_sparql . "}";
-  warn $bgp->as_sparql . "\n\n";
+  my $sparql = "select " . $project->as_sparql;
+  warn $sparql;
+
   return scalar new RDF::Query($sparql);
 }
 
