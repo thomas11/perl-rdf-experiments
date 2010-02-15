@@ -25,13 +25,11 @@ use RDF::Query::Node::Resource;
 use RDF::Query::Node::Variable;
 use RDF::Trine;
 use RDF::Trine::Model;
+use RDF::Trine::Namespace qw ( rdf );
 use RDF::Trine::Store::SPARQL;
 
 # setup
-my $NAMESPACES = {
-  UNIPROT => 'http://purl.uniprot.org/core/',
-  RDF     => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
-};
+my $UNIPROT = RDF::Trine::Namespace->new('http://purl.uniprot.org/core/');
 
 # I used 4store. Anything that implements the SPARQL Protocol
 # <http://www.w3.org/TR/2008/REC-rdf-sparql-protocol-20080115/#query-bindings-http>
@@ -70,24 +68,18 @@ sub construct_query_bgp {
   # We're asking for a Protein. That's mostly unnecessary as it's
   # unlikely anything else would match a property chain matching a
   # UniProt protein, but why not.
-  push @patterns, new_is_a_triple($prot_var,
-                                  new_resource('Protein', 'UNIPROT'));
+  push @patterns, new_triple($prot_var, $rdf->type, $UNIPROT->Protein);
 
   # Construct query triple chain.
   my $subject = $prot_var;
   foreach my $prop (@$props_ref) {
     # TODO namespaces other than uniprot
-    my $predicate = new_resource($prop);
     my $object    = new_var($prop);
-    push @patterns, new_triple($subject, $predicate, $object);
+    push @patterns, new_triple($subject, $UNIPROT->$prop, $object);
     $subject      = $object;
   }
 
-  my $bgp = new RDF::Query::Algebra::BasicGraphPattern(@patterns);
-  my $ggp = new RDF::Query::Algebra::GroupGraphPattern($bgp);
-
-  my $project = RDF::Query::Algebra::Project->new($ggp,
-                                                  [new_var($result_prop)]);
+  my $project = new_basic_project(\@patterns, $result_prop);
 
   my $sparql = "select " . $project->as_sparql;
   warn $sparql;
@@ -95,12 +87,6 @@ sub construct_query_bgp {
   return scalar new RDF::Query($sparql);
 }
 
-sub new_resource {
-  my ($res, $ns) = @_;
-  my $ns_uri = $NAMESPACES->{$ns};
-  $ns_uri    = $NAMESPACES->{UNIPROT} if not defined $ns_uri;
-  return scalar RDF::Query::Node::Resource->new($ns_uri . $res);
-}
 
 sub new_var {
   my ($var) = @_;
@@ -112,9 +98,14 @@ sub new_triple {
   return scalar new RDF::Query::Algebra::Triple($s, $p, $o)
 }
 
-sub new_is_a_triple {
-  my ($var, $resource) = @_;
-  return scalar new_triple($var, new_resource('type', 'RDF'), $resource);
+sub new_basic_project {
+  my ($patterns_ref, $result_prop) = @_;
+
+  my $bgp = new RDF::Query::Algebra::BasicGraphPattern(@$patterns_ref);
+  my $ggp = new RDF::Query::Algebra::GroupGraphPattern($bgp);
+
+  return scalar RDF::Query::Algebra::Project->new($ggp,
+                                                  [new_var($result_prop)]);
 }
 
 
