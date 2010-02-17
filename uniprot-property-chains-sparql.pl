@@ -107,31 +107,3 @@ sub new_basic_project {
   return scalar RDF::Query::Algebra::Project->new($ggp,
                                                   [new_var($result_prop)]);
 }
-
-
-### TEXTUAL SPARQL CONSTRUCTION ###
-
-sub namespace {
-  my ($str) = @_;
-  return ($str =~ ':') ? $str : ':'.$str;
-}
-
-sub construct_query_textual {
-  my ($props_ref, $result_prop) = @_;
-
-  my $prop_chain_query = ' ?p';
-  foreach my $prop (@$props_ref) {
-    $prop_chain_query .= " " . namespace($prop) . " ?$prop .\n  ?$prop ";
-  }
-  $prop_chain_query .= namespace($result_prop) . " ?$result_prop";
-
-  my $protein_query_template = "select ?$result_prop where {
-  ?p rdf:type :Protein .";
-
-  my $sparql = NAMESPACES .
-  "$protein_query_template
-   $prop_chain_query
-  }
-  ";
-  return scalar new RDF::Query($sparql);
-}
