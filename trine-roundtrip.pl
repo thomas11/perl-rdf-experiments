@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 
-# Small toy app to play with RDF::Trine. Read an RDF/XML file and
-# print it out again. Add argument 'json' to print it as JSON.
+# Small toy app to play with RDF::Trine. Read an RDF/XML file, print
+# the number of triples, and print it out again in RDF::Trine's
+# serialization. Give the in- and output serializations with -i and
+# -o, or leave them out to default to RDF/XML.
 
 use strict;
 use warnings;
