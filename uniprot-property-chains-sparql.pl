@@ -1,20 +1,19 @@
 #!/usr/bin/env perl
 
-
-# A toy program written to explore existing Perl RDF modules.
-#
-# $ ./trine-sparql.pl 'recommendedName->fullName' will, for each
-# uniprot:Protein in the store, print out all their full recommended
-# names. In general, the program will follow a '->'-separated property
-# chain on each protein in the store, and print the values of the last
-# property.
+# A toy program written to explore RDF::Query.
 #
 # It's very crude at the moment, and expects you have a running SPARQL
 # endpoint with a HTTP interface (SPARQL Protocol) on
 # http://localhost:8000/sparql/, that has some UniProt entries.
 #
-# The SPARQL query is built either programmatically using RDF::Query,
-# or textually (construct_query_textual) so you don't need RDF::Query.
+# $ ./uniprot-property-chains--sparql.pl 'recommendedName->fullName'
+# will, for each uniprot:Protein in the store, print out all their
+# full recommended names. In general, the program will follow a
+# '->'-separated property chain on each protein in the store, and
+# print the values of the last property.
+
+use strict;
+use warnings;
 
 use RDF::Query;
 use RDF::Query::Algebra::BasicGraphPattern;
@@ -35,7 +34,6 @@ my $UNIPROT = RDF::Trine::Namespace->new('http://purl.uniprot.org/core/');
 # <http://www.w3.org/TR/2008/REC-rdf-sparql-protocol-20080115/#query-bindings-http>
 # should be fine.
 my $store    = RDF::Trine::Store::SPARQL->new('http://localhost:8000/sparql/');
-
 my $model    = RDF::Trine::Model->new($store);
 
 
